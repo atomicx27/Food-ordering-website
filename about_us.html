@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Us</title>
+</head>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<header>
+  <nav>
+      <!-- Burger Menu -->
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+          <i class="fa fa-bars"></i>
+      </label>
+
+      <!-- Navbar Contents -->
+      <label class="logo">APS Pvt Ltd.</label>
+      <ul>
+          <li><a href="home_1.html" class="active">Home</a></li>
+          <li><a href="about_us.html">About</a></li>
+          <li><a href="#">Contact Us</a></li>
+      </ul>
+  </nav>
+</header>
+<body>
+
+  <div class="ot">
+    <h1 style="font-size: 80px;">Our Team</h1>
+  </div>
+
+  <div class="column">
+    <div class="set">
+      <div class="img">
+        <img src="images/sa.jpg" style="height: 550px;">
+      </div>
+      <div class="box">
+        <div class="con">
+          <h2 class="name">Shitij Agrawal</h2>
+          <p class="title">CFO & Co-Founder</p><br>
+          <p align="justify" class="tex">Sharp-witted and helps his peers feel ease around him. The pride he takes in
+            his work is
+            truly inspiring.
+          </p><br>
+        </div>
+        <div class="but">
+          <a href="mailto:shitij.agrawal211@nmims.edu.in" class="fa fa-google"></a>
+          <a href="https://www.linkedin.com/in/shitijagrawal" class="fa fa-linkedin"></a><br>
+          <button class="button">Contact Us</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="set">
+      <div class="img">
+        <img src="images/amp.jpg" style="height: 550px;">
+      </div>
+      <div class="box">
+        <div class="con">
+          <h2 class="name">Aryan Mehta</h2>
+          <p class="title">CEO & Co-Founder</p><br>
+          <p align="justify" class="tex">The big brain of the company with extraordinary theories. Keeps getting better
+            at his
+            role.
+          </p><br>
+        </div>
+        <div class="but">
+          <a href="mailto:aryan.mehta043@nmims.edu.in" class="fa fa-google"></a>
+          <a href="https://www.linkedin.com/in/aryan-mehta-750539223" class="fa fa-linkedin"></a><br>
+          <button class="button">Contact Us</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="set">
+      <div class="img">
+        <img src="images/pk.png" style="height: 550px;">
+      </div>
+      <div class="box">
+        <div class="con">
+          <h2 class="name">Pashin Kasad</h2>
+          <p class="title">CTO</p><br>
+          <p align="justify" class="tex">An expert overseeing technology and creating policy. The crew is greatly
+            benefited by his
+            upbeat attitude.
+          </p><br>
+        </div>
+        <div class="but">
+          <a href="mailto:pashin.kasad010@nmims.edu.in" class="fa fa-google"></a>
+          <a href="https://www.linkedin.com/in/pashin-kasad-1a698a24a" class="fa fa-linkedin"></a><br>
+          <button class="button">Contact Us</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="set">
+      <div class="img">
+        <img src="images/sk.jpg" style="height: 550px;">
+      </div>
+      <div class="box">
+        <div class="con">
+          <h2 class="name">Savyasaachin Kale</h2>
+          <p class="title">CDO</p><br>
+          <p align="justify" class="tex">Brilliant brainstormer and keen on whatever he picks. Has a fast-paced
+            apprenticeship rate.</p><br>
+        </div>
+        <div class="but">
+          <a href="mailto:savyasaachin.kale129@nmims.edu.in" class="fa fa-google"></a>
+          <a href="#" class="fa fa-linkedin"></a><br>
+          <button class="button">Contact Us</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+</body>
+
+</html>
+
+
+<style>
+  body {
+    background-color: #E0FFFF;
+    font-family: Poppins;
+    margin: 0;
+  }
+
+  html {
+    box-sizing: border-box;
+  }
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+
+  .column {
+    float: left;
+    width: 25%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+  }
+
+  .set {
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+    background-color: white;
+    margin: auto;
+    width: 97%;
+    height: 675px;
+  }
+
+  .con {
+    height: 70%;
+  }
+
+  .ot {
+    font-size: 50px;
+    text-align: center;
+  }
+
+  .ot p {
+    font-size: 20px;
+  }
+
+  .box {
+    padding: 0 16px;
+    height: 50%;
+  }
+
+  .box::after,
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+
+  /*Gap between h2 and p */
+  .name {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+  }
+
+  .title {
+    color: darkgrey;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+  }
+
+
+  /*Button Animation */
+  .button {
+    border: none;
+    padding: 8px;
+    color: black;
+    background-color: #F4C430;
+    width: 40%;
+    font-family: poppins;
+    font-weight: 400;
+  }
+
+  .button:hover {
+    background-color: transparent;
+  }
+
+
+  /*Image Animation */
+  .img {
+    clip-path: polygon(100% 0, 100% 95%, 0% 83%, 0% 0%);
+    background-position: center;
+    background-size: cover;
+    height: 350px;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  .set:hover img {
+    transform: scale(1.110);
+    transition: 0.4s;
+  }
+
+
+  /*LinkedIn and Gmail linking */
+  .fa {
+    padding: 8px;
+    font-size: 13px;
+    width: 28px;
+    height: 28px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+  }
+
+  .fa-linkedin {
+    background-color: #007bb5;
+    color: black;
+  }
+
+  .fa-google {
+    background-color: #dd4b39;
+    color: black;
+  }
+
+  .fa:hover {
+    background-color: transparent;
+    transform: scale(1.8);
+  }
+
+
+  /*Resposive Site */
+
+  @media screen and (max-width: 1175px) {
+    .column {
+      width: 50%;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 1175px) {
+    .con,
+    .con .tex,
+    .but {
+      text-align: center;
+    }
+  }
+  /*  */
+/* NavBar  */
+/*  */
+nav{
+    background-color: #0082e6;
+    height: 80px;
+    width: 100%;
+}
+label.logo{
+    color: white;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold;
+}
+nav ul{
+    float: right;
+    margin-right: 20px;
+}
+nav ul li{
+    display: inline;
+    line-height: 80px;
+    margin: 0 15px;
+}
+nav ul li a{
+    color: white;
+    font-size: 17px;
+    text-transform: uppercase;
+    padding: 9px;
+    border-radius: 20cm;
+}
+a.active,a:hover{
+    background-color: #1b9bff;
+    transition: 0.5s;
+}
+.checkbtn{
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
+}
+
+/*Media Qeuery   */
+@media (max-width:852px)
+{
+    .checkbtn{
+        display: block;
+    }
+    ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2c3e50;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all 0.5s;
+}
+nav ul li{
+    display: block;
+    margin: 50px 0;
+
+}
+nav ul li a{
+    font-size: 20px;
+}
+a:hover,a:active{
+    background: none;
+    color:  #0082e6;
+    
+}
+#check:checked~ul{
+    left: 0;
+}
+}
+/*Media Qeuery   */
+@media (max-width:852px)
+{
+    .checkbtn{
+        display: block;
+    }
+    ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2c3e50;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all 0.5s;
+}
+nav ul li{
+    display: block;
+    margin: 50px 0;
+
+}
+nav ul li a{
+    font-size: 20px;
+}
+a:hover,a:active{
+    background: none;
+    color:  #0082e6;
+    
+}
+#check:checked~ul{
+    left: 0;
+}
+}
+
+</style>

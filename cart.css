@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+body{
+    font-family: 'Roboto',sans-serif;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+table{
+    width: 60%;
+}
+input:focus,
+button:focus,
+.form-control:focus{
+    outline: none;
+    box-shadow: none;
+
+}
+.form-control:disabled ,
+ .form-control[readonly]{
+    background-color:#fff; ;
+}
+.table tr,
+.table tr td{
+    vertical-align: middle;
+}
+.button-container{
+    display: flex;
+    align-items: center;
+}
+.button-container .form-control{
+    max-width: 80px;
+    text-align: center;
+    display: inline-block;
+    margin: 0px 5px;
+}
+#myTable .form-control{
+    width: auto;
+    display: inline-block;
+}
+.cart-qty-plus,
+.cart-qty-minus{
+    width: 38px;
+    height: 38px;
+    background-color: #fff;
+    border: 1px solid #ced4da ;
+    border-radius: .25rem;
+}
+.cart-qty-plus:hover,
+.cart-qty-minus:hover{
+    background-color: #0082e6;
+    color: #fff;
+}
+.img-prdct{
+    width: 50px;
+    height: 50px;
+    /* background-color: #0082e6; */
+    border-radius: 4px;
+}
+.img-prdct img{
+    width: 100%;
+}
+
+/* MEDIA QUERY */
+
+nav{
+    background-color: #0082e6;
+    height: 80px;
+    width: 100%;
+}
+label.logo{
+    color: white;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold;
+}
+nav ul{
+    float: right;
+    margin-right: 20px;
+}
+nav ul li{
+    display: inline;
+    line-height: 80px;
+    margin: 0 15px;
+}
+nav ul li a{
+    color: white;
+    font-size: 17px;
+    text-transform: uppercase;
+    padding: 9px;
+    border-radius: 20cm;
+}
+a.active,a:hover{
+    background-color: #1b9bff;
+    transition: 0.5s;
+}
+.checkbtn{
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
+}
+
+/*Media Qeuery   */
+@media (max-width:852px)
+{
+    .checkbtn{
+        display: block;
+    }
+    ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2c3e50;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all 0.5s;
+}
+nav ul li{
+    display: block;
+    margin: 50px 0;
+
+}
+nav ul li a{
+    font-size: 20px;
+}
+a:hover,a:active{
+    background: none;
+    color:  #0082e6;
+    
+}
+#check:checked~ul{
+    left: 0;
+}
+}
+/*Media Qeuery   */
+@media (max-width:852px)
+{
+    .checkbtn{
+        display: block;
+    }
+    ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2c3e50;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all 0.5s;
+}
+nav ul li{
+    display: block;
+    margin: 50px 0;
+
+}
+nav ul li a{
+    font-size: 20px;
+}
+a:hover,a:active{
+    background: none;
+    color:  #0082e6;
+    
+}
+#check:checked~ul{
+    left: 0;
+}
+}
+
+
+.order{
+    height: 50px;
+    width: 60%;
+    font-size: 2vw;
+    background-color: #0082e6;
+    border-radius: 2cm;
+    vertical-align: middle;
+}
+.order1{
+    vertical-align: auto;
+}

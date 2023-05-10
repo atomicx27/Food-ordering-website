@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #aboutpagebanner{
+    background-color: #0082e6;
+    background-size: cover;
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 15px;  
+}
+#aboutpagebanner h1{
+    color: white;
+    font-size: 5vw;
+}
+#aboutpagebanner h3{
+    color: white;
+    font-size: 1.5vw;
+}
+#aboutpagebanner #abouttext{
+    padding: 20px 40px;
+    border-radius: 5px;
+    text-align: center;
+
+}
+#aboutdetails{
+    padding: 20px 80px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+#aboutdetails img{
+    width: 40vw;
+    height: auto;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.863);
+}
+#aboutdetails #text{
+    padding-left: 2vw;
+}
+#aboutdetails #text h1{
+    font-size: 4vw;
+    font-weight: 600;
+}
+#aboutdetails #text p{
+    font-size: 18px;
+}
+#aboutdetails #text #aboutm{
+    font-weight: 600;
+    padding: 5px 0px;
+    background-color: #ccc;
+}
+    </style>
+</head>
+<body>
+    <div class="main">
+        <form method="post" action="menu.html" name="ContactForm" onsubmit="return ValidateContactForm();">
+            <br>
+            <br>
+            <center><b>
+                    <h2 style="color: #0082e6; font-size: 4vw; border-radius: 10px;">Enter 10 Digit PNR Number</h2>
+                </b></center>
+            <br>
+            <br>
+            <center><input type="text" placeholder="Enter PNR number" class="pnr" name="Name" id="pnr10"
+                style="background-color:#fcfdfd ; width:60%; font-size: 4vw; border-radius: 10px; text-align: center; border: 2px solid black;">
+        </center>
+        <br>
+        <br>
+        <br>
+       <input type="button" value="0" onclick="print()">
+
+
+       <div>
+        <img src="images/amp.jpg" alt="aryanmehta">
+        <p><span>Aryan Mehta</span> Roll Number : C032<br>Phone : 9137023659 <br> Email : aryabhav2004@gmail.com</p>
+     </div>
+     <div>
+        <img src="images/pk.png" alt="aadityarmall">
+        <p><span>Pashin Kasad</span> Roll Number : C002<br>Phone : 9326430750 <br> Email : aadityarmall@gmail.com</p>
+     </div>
+     <div>
+        <img src="images/sa.jpg" alt="arushisangle">
+        <p><span>Shitij Agrawal</span> Roll Number : C011<br>Phone : 9619232329 <br> Email : arushigsangle@gmail.com</p>
+     </div>
+     <div>
+        <img src="images/sk.jpg" alt="arushisangle">
+        <p><span>SavyaSachin Kale</span> Roll Number : C011<br>Phone : 9619232329 <br> Email : arushigsangle@gmail.com</p>
+     </div>
+
+
+     <section id="aboutpagebanner">
+        <div id="abouttext">
+           <h1>Order Placed</h1>
+           <h3>Sit back,Relax and Enjoy!1</h3>
+        </div>
+
+        <a href="home_1.html"><input type="submit" value="Submit"></a>
+     </section>
+</body>
+<script>
+    function print()
+    {
+        var name=document.getElementById('pnr10').value;
+        document.getElementById('pnr_10').innerHTML="Hello "+name;
+    }
+</script>
+
+</html>

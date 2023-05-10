@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cart.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <!-- <script src="cart.js"></script> -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <!-- <link rel="stylesheet" href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+   <script src="jquery-3.6.3.js"></script> -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    <title>Cart</title>
+    <link rel="stylesheet" href="home.php">
+</head>
+
+<body>
+    <nav>
+        <!-- Burger Menu -->
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fa fa-bars"></i>
+        </label>
+
+        <!-- Navbar Contents -->
+        <label class="logo">APS Pvt Ltd.</label>
+        <ul>
+            <li><a href="home_1.html" class="active">Home</a></li>
+            <li><a href="about_us.html">About</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </nav>
+    <form onsubmit="myfunc(event)" method="post" action="process_order.php">
+        <div class="container-fluid mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="table-responsive">
+                        <center>
+                            <table id="myTable" class="table">
+                                <thead>
+                                    <tr style="width: 60%;">
+                                        <th>Food Item</th>
+                                        <th>Name</th>
+                                        <th>Qty</th>
+                                        <th>Price</th>
+                                        <th class="text-right">
+                                            <span id="amount" class="amount">Amount</span>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Product 1 -->
+                                    <tr>
+                                        <td>
+                                            <div class="product-img">
+                                                <div class="img-prdct"><img src="images/biryani.jfif" alt="">
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Veg Biryani</td>
+                                        <td>
+                                            <div class="button-container">
+                                                <button class="cart-qty-plus" type="button" value="+"
+                                                    onclick="IncrementValue(1)">+</button>
+                                                <input type="text" name="qty" min="0" class="qty form-control" value="0"
+                                                    id="counter1">
+                                                <button class="cart-qty-minus" type="button" value="-"
+                                                    onclick="DecrementValue(1)">-</button>
+                                            </div>
+                                        </td>
+                                        <td><input type="text" value="200" class="price form-control" disabled
+                                                id="Initial1"></td>
+                                        <td align="right">Rs <span id="amount1" class="amount">0</span>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Product 2 -->
+                                    <br>
+                                    <br>
+                                    <tr>
+                                        <td>
+                                            <div class="product-img">
+                                                <div class="img-prdct"><img src="images/cutlet.jpg" alt="">
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Veg Cutlet</td>
+                                        <td>
+                                            <div class="button-container">
+                                                <button class="cart-qty-plus" type="button" value="+"
+                                                    onclick="IncrementValue(2)">+</button>
+                                                <input type="text" name="qty" min="0" class="qty form-control" value="0"
+                                                    id="counter2" />
+                                                <button class="cart-qty-minus" type="button" value="-"
+                                                    onclick="DecrementValue(2)">-</button>
+                                            </div>
+                                        </td>
+                                        <td><input type="text" value="150" class="price form-control" id="Initial2"
+                                                disabled></td>
+                                        <td align="right">Rs <span id="amount2" class="amount">0</span>
+                                        </td>
+                                    </tr>
+                                    <!-- Product 3 -->
+                                    <tr>
+                                        <td>
+                                            <div class="product-img">
+                                                <div class="img-prdct"><img src="images/bread.jpg" alt="">
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Bread Jam</td>
+                                        <td>
+                                            <div class="button-container">
+                                                <button class="cart-qty-plus" type="button" value="+"
+                                                    onclick="IncrementValue(3)">+</button>
+                                                <input type="text" name="qty" min="0" class="qty form-control" value="0"
+                                                    id="counter3" />
+                                                <button class="cart-qty-minus" type="button" value="-"
+                                                    onclick="DecrementValue(3)">-</button>
+                                            </div>
+                                        </td>
+                                        <td><input type="text" value="100" class="price form-control" id="Initial3"
+                                                disabled></td>
+                                        <td align="right">Rs <span id="amount3" class="amount">0</span>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Product 4 -->
+                                    <tr>
+                                        <td>
+                                            <div class="product-img">
+                                                <div class="img-prdct"><img src="images/sandwich.jpg" alt="">
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Veg Club Sandwich</td>
+                                        <td>
+                                            <div class="button-container">
+                                                <button class="cart-qty-plus" type="button" value="+"
+                                                    onclick="IncrementValue(4)">+</button>
+                                                <input type="text" name="qty" min="0" class="qty form-control" value="0"
+                                                    id="counter4" />
+                                                <button class="cart-qty-minus" type="button" value="-"
+                                                    onclick="DecrementValue(4)">-</button>
+                                            </div>
+                                        </td>
+                                        <td><input type="text" value="200" class="price form-control" id="Initial4"
+                                                disabled></td>
+                                        <td align="right">Rs <span id="amount4" class="amount">0</span>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Product 5-->
+                                    <tr>
+                                        <td>
+                                            <div class="product-img">
+                                                <div class="img-prdct"><img src="images/rice.webp" alt="">
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Veg Rice Combo</td>
+                                        <td>
+                                            <div class="button-container">
+                                                <button class="cart-qty-plus" type="button" value="+"
+                                                    onclick="IncrementValue(5)">+</button>
+                                                <input type="text" name="qty" min="0" class="qty form-control" value="0"
+                                                    id="counter5" />
+                                                <button class="cart-qty-minus" type="button" value="-"
+                                                    onclick="DecrementValue(5)">-</button>
+                                            </div>
+                                        </td>
+                                        <td><input type="text" value="220" class="price form-control" id="Initial5"
+                                                disabled></td>
+                                        <td align="right">Rs <span id="amount5" class="amount">0</span>
+                                        </td>
+                                    </tr>
+                                    <!-- product 6 -->
+                                    <tr>
+                                        <td>
+                                            <div class="product-img">
+                                                <div class="img-prdct"><img src="images/noodles.jfif" alt="">
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Veg Noodles Combo</td>
+                                        <td>
+                                            <div class="button-container">
+                                                <button class="cart-qty-plus" type="button" value="+"
+                                                    onclick="IncrementValue(6)">+</button>
+                                                <input type="text" name="qty" min="0" class="qty form-control" value="0"
+                                                    id="counter6" />
+                                                <button class="cart-qty-minus" type="button" value="-"
+                                                    onclick="DecrementValue(6)">-</button>
+                                            </div>
+                                        </td>
+                                        <td><input type="text" value="200" class="price form-control" id="Initial6"
+                                                disabled></td>
+                                        <td align="right">Rs <span id="amount6" class="amount">0</span>
+                                        </td>
+                                    </tr>
+                                    <!-- Product 7 -->
+                                    <tr>
+                                        <td>
+                                            <div class="product-img">
+                                                <div class="img-prdct"><img src="images/standard.jpg" alt="">
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Veg Standard Meal</td>
+                                        <td>
+                                            <div class="button-container">
+                                                <button class="cart-qty-plus" type="button" value="+"
+                                                    onclick="IncrementValue(7)">+</button>
+                                                <input type="text" name="qty" min="0" class="qty form-control" value="0"
+                                                    id="counter7" />
+                                                <button class="cart-qty-minus" type="button" value="-"
+                                                    onclick="DecrementValue(7)">-</button>
+                                            </div>
+                                        </td>
+                                        <td><input type="text" value="200" class="price form-control" id="Initial7"
+                                                disabled></td>
+                                        <td align="right">Rs <span id="amount7" class="amount">0</span>
+                                        </td>
+                                    </tr>
+                                    <!-- Product 8 -->
+                                    <tr>
+                                        <td>
+                                            <div class="product-img">
+                                                <div class="img-prdct"><img src="images/maharaja.jpg" alt="">
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Veg Maharaja Meal</td>
+                                        <td>
+                                            <div class="button-container">
+                                                <button class="cart-qty-plus" type="button" value="+"
+                                                    onclick="IncrementValue(8)">+</button>
+                                                <input type="text" name="qty" min="0" class="qty form-control" value="0"
+                                                    id="counter8" />
+                                                <button class="cart-qty-minus" type="button" value="-"
+                                                    onclick="DecrementValue(8)">-</button>
+                                            </div>
+                                        </td>
+                                        <td><input type="text" value="300" class="price form-control" id="Initial8"
+                                                disabled></td>
+                                        <td align="right">Rs <span id="amount8" class="amount">0</span>
+                                        </td>
+                                    </tr>
+                                    <!-- Product 9 -->
+                                    <tr>
+                                        <td>
+                                            <div class="product-img">
+                                                <div class="img-prdct"><img src="images/spring_roll.jpg" alt="">
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Veg Spring Roll</td>
+                                        <td>
+                                            <div class="button-container">
+                                                <button class="cart-qty-plus" type="button" value="+"
+                                                    onclick="IncrementValue(9)">+</button>
+                                                <input type="text" name="qty" min="0" class="qty form-control" value="0"
+                                                    id="counter9" />
+                                                <button class="cart-qty-minus" type="button" value="-"
+                                                    onclick="DecrementValue(9)">-</button>
+                                            </div>
+                                        </td>
+                                        <td><input type="text" value="150" class="price form-control" id="Initial9"
+                                                disabled></td>
+                                        <td align="right">Rs <span id="amount9" class="amount">0</span>
+                                        </td>
+                                    </tr>
+                                    <!-- Prouduct 10 -->
+                                    <tr>
+                                        <td>
+                                            <div class="product-img">
+                                                <div class="img-prdct"><img src="images/paneer_tikka.jpg" alt="">
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Veg Paneer Tikka</td>
+                                        <td>
+                                            <div class="button-container">
+                                                <button class="cart-qty-plus" type="button" value="+"
+                                                    onclick="IncrementValue(10)">+</button>
+                                                <input type="text" name="qty" min="0" class="qty form-control" value="0"
+                                                    id="counter10" />
+                                                <button class="cart-qty-minus" type="button" value="-"
+                                                    onclick="DecrementValue(10)">-</button>
+                                            </div>
+                                        </td>
+                                        <td><input type="text" value="250" class="price form-control" id="Initial10"
+                                                disabled></td>
+                                        <td align="right">Rs <span id="amount10" class="amount">0</span>
+                                        </td>
+                                    </tr>
+                                    <!-- Product 11 -->
+                                    <tr>
+                                        <td>
+                                            <div class="product-img">
+                                                <div class="img-prdct"><img src="images/pizza.jpg" alt="">
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Veg Exotic Pizza</td>
+                                        <td>
+                                            <div class="button-container">
+                                                <button class="cart-qty-plus" type="button" value="+"
+                                                    onclick="IncrementValue(11)">+</button>
+                                                <input type="text" name="qty" min="0" class="qty form-control" value="0"
+                                                    id="counter11" />
+                                                <button class="cart-qty-minus" type="button" value="-"
+                                                    onclick="DecrementValue(11)">-</button>
+                                            </div>
+                                        </td>
+                                        <td><input type="text" value="250" class="price form-control" id="Initial11"
+                                                disabled></td>
+                                        <td align="right">Rs <span id="amount11" class="amount">0</span>
+                                        </td>
+                                    </tr>
+                                    <!-- Product 12 -->
+                                    <tr>
+                                        <td>
+                                            <div class="product-img">
+                                                <div class="img-prdct"><img src="images/pizza1.jpg" alt="">
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Veg Margherita Pizza</td>
+                                        <td>
+                                            <div class="button-container">
+                                                <button class="cart-qty-plus" type="button" value="+"
+                                                    onclick="IncrementValue(12)">+</button>
+                                                <input type="text" name="qty" min="0" class="qty form-control" value="0"
+                                                    id="counter12" />
+                                                <button class="cart-qty-minus" type="button" value="-"
+                                                    onclick="DecrementValue(12)">-</button>
+                                            </div>
+                                        </td>
+                                        <td><input type="text" value="200" class="price form-control" id="Initial12"
+                                                disabled></td>
+                                        <td align="right">Rs <span id="amount12" class="amount">0</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="4"></td>
+                                        <td align="right">
+                                            <strong>TOTAL= Rs
+                                                <span id="totalDis" class="total">0</span>
+                                            </strong>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </center>
+
+                        <input type="submit" name="submit" value="Submit">
+
+                        <center><a href="final.php" style="background-color: #0082e6; font-size: 2vw; border-radius: 10px; width: 150%; border: 1px solid; margin-top: 70px; color: black;"  >Submit</a></center>
+    </form>
+    </div>
+    </div>
+    </div>
+    </div>
+    <br>
+    <br>
+    <br>
+</body>
+
+
+
+<script>
+    function IncrementValue(num) {
+        switch (num) {
+            case 1:
+                var InitialCost = document.getElementById('Initial1').value;
+                var Count = document.getElementById('counter1').value;
+                Count++;
+                document.getElementById('counter1').value = Count;
+                var Final = Count * InitialCost;
+                document.getElementById('amount1').innerHTML = Final;
+                break;
+            case 2:
+                var InitialCost = document.getElementById('Initial2').value;
+                var Count = document.getElementById('counter2').value;
+                Count++;
+                document.getElementById('counter2').value = Count;
+                var Final = Count * InitialCost;
+                document.getElementById('amount2').innerHTML = Final;
+                break;
+            case 3:
+                var InitialCost = document.getElementById('Initial3').value;
+                var Count = document.getElementById('counter3').value;
+                Count++;
+                document.getElementById('counter3').value = Count;
+                var Final = Count * InitialCost;
+                document.getElementById('amount3').innerHTML = Final;
+                break;
+
+            case 4:
+                var InitialCost = document.getElementById('Initial4').value;
+                var Count = document.getElementById('counter4').value;
+                Count++;
+                document.getElementById('counter4').value = Count;
+                var Final = Count * InitialCost;
+                document.getElementById('amount4').innerHTML = Final;
+                break;
+
+            case 5:
+                var InitialCost = document.getElementById('Initial5').value;
+                var Count = document.getElementById('counter5').value;
+                Count++;
+                document.getElementById('counter5').value = Count;
+                var Final = Count * InitialCost;
+                document.getElementById('amount5').innerHTML = Final;
+                break;
+
+            case 6:
+                var InitialCost = document.getElementById('Initial6').value;
+                var Count = document.getElementById('counter6').value;
+                Count++;
+                document.getElementById('counter6').value = Count;
+                var Final = Count * InitialCost;
+                document.getElementById('amount6').innerHTML = Final;
+                break;
+
+            case 7:
+                var InitialCost = document.getElementById('Initial7').value;
+                var Count = document.getElementById('counter7').value;
+                Count++;
+                document.getElementById('counter7').value = Count;
+                var Final = Count * InitialCost;
+                document.getElementById('amount7').innerHTML = Final;
+                break;
+
+            case 8:
+                var InitialCost = document.getElementById('Initial8').value;
+                var Count = document.getElementById('counter8').value;
+                Count++;
+                document.getElementById('counter8').value = Count;
+                var Final = Count * InitialCost;
+                document.getElementById('amount8').innerHTML = Final;
+                break;
+
+            case 9:
+                var InitialCost = document.getElementById('Initial9').value;
+                var Count = document.getElementById('counter9').value;
+                Count++;
+                document.getElementById('counter9').value = Count;
+                var Final = Count * InitialCost;
+                document.getElementById('amount9').innerHTML = Final;
+                break;
+
+            case 10:
+                var InitialCost = document.getElementById('Initial10').value;
+                var Count = document.getElementById('counter10').value;
+                Count++;
+                document.getElementById('counter10').value = Count;
+                var Final = Count * InitialCost;
+                document.getElementById('amount10').innerHTML = Final;
+                break;
+
+            case 11:
+                var InitialCost = document.getElementById('Initial11').value;
+                var Count = document.getElementById('counter11').value;
+                Count++;
+                document.getElementById('counter11').value = Count;
+                var Final = Count * InitialCost;
+                document.getElementById('amount11').innerHTML = Final;
+                break;
+
+            case 12:
+                var InitialCost = document.getElementById('Initial12').value;
+                var Count = document.getElementById('counter12').value;
+                Count++;
+                document.getElementById('counter12').value = Count;
+                var Final = Count * InitialCost;
+                document.getElementById('amount12').innerHTML = Final;
+                break;
+            default:
+                console.log("No value chosen Switch Case");
+        }
+        Total();
+    }
+    function DecrementValue(num) {
+        switch (num) {
+            case 1:
+                var InitialCost = document.getElementById('Initial1').value;
+                var Count = document.getElementById('counter1').value;
+                Count--;
+                document.getElementById('counter1').value = Count;
+                var Final = Count * InitialCost;
+                document.getElementById('amount1').innerHTML = Final;
+                break;
+
+            case 2:
+                var InitialCost = document.getElementById('Initial2').value;
+                var Count = document.getElementById('counter2').value;
+                Count--;
+                document.getElementById('counter2').value = Count;
+                var Final = Count * InitialCost;
+                document.getElementById('amount2').innerHTML = Final;
+                break;
+
+            case 3:
+                var InitialCost = document.getElementById('Initial3').value;
+                var Count = document.getElementById('counter3').value;
+                Count--;
+                document.getElementById('counter3').value = Count;
+                var Final = Count * InitialCost;
+                document.getElementById('amount3').innerHTML = Final;
+                break;
+
+            case 4:
+                var InitialCost = document.getElementById('Initial4').value;
+                var Count = document.getElementById('counter4').value;
+                Count--;
+                document.getElementById('counter4').value = Count;
+                var Final = Count * InitialCost;
+                document.getElementById('amount4').innerHTML = Final;
+                break;
+
+            case 5:
+                var InitialCost = document.getElementById('Initial5').value;
+                var Count = document.getElementById('counter5').value;
+                Count--;
+                document.getElementById('counter5').value = Count;
+                var Final = Count * InitialCost;
+                document.getElementById('amount5').innerHTML = Final;
+                break;
+
+            case 6:
+                var InitialCost = document.getElementById('Initial6').value;
+                var Count = document.getElementById('counter6').value;
+                Count--;
+                document.getElementById('counter6').value = Count;
+                var Final = Count * InitialCost;
+                document.getElementById('amount6').innerHTML = Final;
+                break;
+
+            case 7:
+                var InitialCost = document.getElementById('Initial7').value;
+                var Count = document.getElementById('counter7').value;
+                Count--;
+                document.getElementById('counter7').value = Count;
+                var Final = Count * InitialCost;
+                document.getElementById('amount7').innerHTML = Final;
+                break;
+
+            case 8:
+                var InitialCost = document.getElementById('Initial8').value;
+                var Count = document.getElementById('counter8').value;
+                Count--;
+                document.getElementById('counter8').value = Count;
+                var Final = Count * InitialCost;
+                document.getElementById('amount8').innerHTML = Final;
+                break;
+
+            case 9:
+                var InitialCost = document.getElementById('Initial9').value;
+                var Count = document.getElementById('counter9').value;
+                Count--;
+                document.getElementById('counter9').value = Count;
+                var Final = Count * InitialCost;
+                document.getElementById('amount9').innerHTML = Final;
+                break;
+
+            case 10:
+                var InitialCost = document.getElementById('Initial10').value;
+                var Count = document.getElementById('counter10').value;
+                Count--;
+                document.getElementById('counter10').value = Count;
+                var Final = Count * InitialCost;
+                document.getElementById('amount10').innerHTML = Final;
+                break;
+
+            case 11:
+                var InitialCost = document.getElementById('Initial11').value;
+                var Count = document.getElementById('counter11').value;
+                Count--;
+                document.getElementById('counter11').value = Count;
+                var Final = Count * InitialCost;
+                document.getElementById('amount11').innerHTML = Final;
+                break;
+
+            case 12:
+                var InitialCost = document.getElementById('Initial12').value;
+                var Count = document.getElementById('counter12').value;
+                Count--;
+                document.getElementById('counter12').value = Count;
+                var Final = Count * InitialCost;
+                document.getElementById('amount12').innerHTML = Final;
+                break;
+            default:
+                console.log("No value chosen Switch Case");
+
+
+        }
+        Total();
+
+    }
+    function Total() {
+        var Item1 = parseInt(document.getElementById('amount1').innerHTML);
+        var Item2 = parseInt(document.getElementById('amount2').innerHTML);
+        var Item3 = parseInt(document.getElementById('amount3').innerHTML);
+        var Item4 = parseInt(document.getElementById('amount4').innerHTML);
+        var Item5 = parseInt(document.getElementById('amount5').innerHTML);
+        var Item6 = parseInt(document.getElementById('amount6').innerHTML);
+        var Item7 = parseInt(document.getElementById('amount7').innerHTML);
+        var Item8 = parseInt(document.getElementById('amount8').innerHTML);
+        var Item9 = parseInt(document.getElementById('amount9').innerHTML);
+        var Item10 = parseInt(document.getElementById('amount10').innerHTML);
+        var Item11 = parseInt(document.getElementById('amount11').innerHTML);
+        var Item12 = parseInt(document.getElementById('amount12').innerHTML);
+
+
+        var TotalVal = Item1 + Item2 + Item3 + Item4 + Item5 + Item6 + Item7 + Item8 + Item9 + Item10 + Item11 + Item12;
+        console.log(TotalVal);
+        document.getElementById('totalDis').innerHTML = TotalVal;
+    }
+
+        var xmlhttp1 = new XMLHttpRequest();
+        xmlhttp1.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                // Response from the server-side PHP script
+                console.log(this.responseText);
+            }
+        };
+        xmlhttp1.open("GET", "process_order.php?item=1&value=" + Item1, true);
+        xmlhttp1.send();
+
+        var xmlhttp2 = new XMLHttpRequest();
+        xmlhttp2.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                // Response from the server-side PHP script
+                console.log(this.responseText);
+            }
+        };
+        xmlhttp2.open("GET", "process_order.php?item=2&value=" + Item2, true);
+        xmlhttp2.send();
+
+        var xmlhttp3 = new XMLHttpRequest();
+        xmlhttp3.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                // Response from the server-side PHP script
+                console.log(this.responseText);
+            }
+        };
+        xmlhttp3.open("GET", "process_order.php?item=3&value=" + Item3, true);
+        xmlhttp3.send();
+
+        var xmlhttp4 = new XMLHttpRequest();
+        xmlhttp4.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                // Response from the server-side PHP script
+                console.log(this.responseText);
+            }
+        };
+        xmlhttp4.open("GET", "process_order.php?item=4&value=" + Item4, true);
+        xmlhttp4.send();
+
+        var xmlhttp5 = new XMLHttpRequest();
+        xmlhttp5.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                // Response from the server-side PHP script
+                console.log(this.responseText);
+            }
+        };
+        xmlhttp5.open("GET", "process_order.php?item=5&value=" + Item5, true);
+        xmlhttp5.send();
+
+        var xmlhttp6 = new XMLHttpRequest();
+        xmlhttp6.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                // Response from the server-side PHP script
+                console.log(this.responseText);
+            }
+        };
+        xmlhttp6.open("GET", "process_order.php?item=6&value=" + Item6, true);
+        xmlhttp6.send();
+
+        var xmlhttp7 = new XMLHttpRequest();
+        xmlhttp7.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                // Response from the server-side PHP script
+                console.log(this.responseText);
+            }
+        };
+        xmlhttp7.open("GET", "process_order.php?item=7&value=" + Item7, true);
+        xmlhttp7.send();
+
+        var xmlhttp8 = new XMLHttpRequest();
+        xmlhttp8.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+        // Response from the server-side PHP script
+        console.log(this.responseText);
+        }
+        };
+        xmlhttp8.open("GET", "process_order.php?item=8&value=" + Item8, true);
+        xmlhttp8.send();
+
+        var xmlhttp9 = new XMLHttpRequest();
+        xmlhttp9.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+        // Response from the server-side PHP script
+        console.log(this.responseText);
+        }
+        };
+        xmlhttp9.open("GET", "process_order.php?item=9&value=" + Item9, true);
+        xmlhttp9.send();
+
+        var xmlhttp10 = new XMLHttpRequest();
+        xmlhttp10.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+        // Response from the server-side PHP script
+        console.log(this.responseText);
+        }
+        };
+        xmlhttp10.open("GET", "process_order.php?item=10&value=" + Item10, true);
+        xmlhttp10.send();
+
+        var xmlhttp11 = new XMLHttpRequest();
+        xmlhttp11.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+        // Response from the server-side PHP script
+        console.log(this.responseText);
+        }
+        };
+        xmlhttp11.open("GET", "process_order.php?item=11&value=" + Item11, true);
+        xmlhttp11.send();
+
+        var xmlhttp12 = new XMLHttpRequest();
+        xmlhttp12.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+        // Response from the server-side PHP script
+        console.log(this.responseText);
+        }
+        };
+        xmlhttp12.open("GET", "process_order.php?item=12&value=" + Item12, true);
+        xmlhttp12.send();
+
+</script>
+
+</html>

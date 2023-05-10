@@ -1,0 +1,310 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins';
+    background-color: #E0FFFF;
+}
+
+/*  */
+/* NavBar  */
+/*  */
+nav{
+    background-color: #0082e6;
+    height: 80px;
+    width: 100%;
+}
+label.logo{
+    color: white;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold;
+}
+nav ul{
+    float: right;
+    margin-right: 20px;
+}
+nav ul li{
+    display: inline;
+    line-height: 80px;
+    margin: 0 15px;
+}
+nav ul li a{
+    color: white;
+    font-size: 17px;
+    text-transform: uppercase;
+    padding: 9px;
+    border-radius: 20cm;
+}
+a.active,a:hover{
+    background-color: #1b9bff;
+    transition: 0.5s;
+}
+.checkbtn{
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    margin-top: 25px;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
+}
+
+/*Media Qeuery   */
+@media (max-width:852px)
+{
+    .checkbtn{
+        display: block;
+    }
+    ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2c3e50;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all 0.5s;
+}
+nav ul li{
+    display: block;
+    margin: 50px 0;
+
+}
+nav ul li a{
+    font-size: 20px;
+}
+a:hover,a:active{
+    background: none;
+    color:  #0082e6;
+    
+}
+#check:checked~ul{
+    left: 0;
+}
+}
+/*Media Qeuery   */
+@media (max-width:852px)
+{
+    .checkbtn{
+        display: block;
+    }
+    ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2c3e50;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all 0.5s;
+}
+nav ul li{
+    display: block;
+    margin: 50px 0;
+
+}
+nav ul li a{
+    font-size: 20px;
+}
+a:hover,a:active{
+    background: none;
+    color:  #0082e6;
+    
+}
+#check:checked~ul{
+    left: 0;
+}
+}
+
+
+/* Special List */
+ul{
+    list-style: none;
+
+}
+ul li{
+    display: inline;
+    justify-content: space-between;
+    margin-left: 30px;
+    font-size: 2vw;
+}
+
+
+
+/* Menu Boxes */
+.box100{
+    width: 90%;
+    display: flex;
+    gap: 60px;
+    margin-left: 180px;
+}
+.box1{
+    height: 300px;
+    width: 40%;
+    background-color: #0082e6;
+    display: flex;
+    gap: 10px;
+    border-radius: 0.5cm;
+}
+.box2{
+    height: 300px;
+    width: 40%;
+    background-color: #0082e6;
+    display: flex;
+    gap: 10px;
+    border-radius: 0.5cm;
+}
+.box1:hover{
+    transition: all 0.5s;
+    height: 320px;
+    width: 42%;
+}
+.box2:hover{
+    transition: all 0.5s;
+    height: 320px;
+    width: 42%;
+}
+
+/* 2nd Row */
+.box200{
+    display: flex;
+    gap: 60px;
+    margin-left: 170px;
+}
+.box3{
+    height: 300px;
+    width: 40%;
+    background-color: #0082e6;
+    display: flex;
+    gap: 10px;
+    border-radius: 0.5cm;
+}
+.box4{
+    height: 300px;
+    width: 40%;
+    background-color: #0082e6;
+    display: flex;
+    gap: 10px;
+    border-radius: 0.5cm;
+}
+.box3:hover{
+    transition: all 0.5s;
+    height: 320px;
+    width: 42%;
+}
+.box4:hover{
+    transition: all 0.5s;
+    height: 320px;
+    width: 42%;
+} 
+
+
+
+
+
+/*  */
+/* Media Query */
+/*  */
+@media (max-width:1000px)
+{
+    .box100{
+        width: 90%;
+        display: inline-block;
+    }
+    .box1{
+        height: 300px;
+        width: 70%;
+        background-color: #0082e6;
+        display: flex;
+        gap: 10px;
+        border-radius: 0.5cm;
+    }
+    .box2{
+        margin-top: 20px;
+        height: 300px;
+        width: 70%;
+        background-color: #0082e6;
+        display: flex;
+        gap: 10px;
+        border-radius: 0.5cm;
+       
+    }
+    .box1:hover{
+        transition: all 0.5s;
+        height: 320px;
+        width: 72%;
+    }
+    .box2:hover{
+        transition: all 0.5s;
+        height: 320px;
+        width: 72%;
+    }
+    .box200{
+        display: inline-block;
+        width: 90%;
+    }
+    .box3{
+        height: 300px;
+        width: 70%;
+        background-color: #0082e6;
+        display: flex;
+        gap: 10px;
+        border-radius: 0.5cm;
+    }
+    .box4{
+        
+        margin-top: 20px;
+        height: 300px;
+        width: 70%;
+        background-color: #0082e6;
+        display: flex;
+        gap: 10px;
+        border-radius: 0.5cm;
+    }
+    .box3:hover{
+        transition: all 0.5s;
+        height: 320px;
+        width: 72%;
+    }
+    .box4:hover{
+        transition: all 0.5s;
+        height: 320px;
+        width: 72%;
+    } 
+    
+}
+
+
+/* Footer Section */
+footer {
+    background-color: #0082e6;
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+}
+table{
+    margin-top: 20px;
+}
+
+.signs {
+    justify-content: space-evenly;
+}
+
+.part-2 {
+    background-color: #0082e6;
+    width: 100%;
+}
+
+.signs {
+    display: flex;
+}
